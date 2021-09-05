@@ -1,1 +1,94 @@
 /* /* use css to make different pages */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace; font-size: 20px;
+    background-color: aqua;
+}
+
+header {
+    
+    font-family:'Courier New', Courier, monospace;
+    color: hotpink;
+    height: 60px;
+    font-size: 2vw;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+
+}
+
+.btnHeader {
+    border-radius: 10px;
+    background-color: aqua;
+    text-decoration: none;
+    border: 0;
+    outline: 0;
+    color: hotpink;
+}
+
+.btnHeader:hover {
+    background-color: orange;
+}
+
+.btn {
+    border-radius: 12px;
+    border: 0;
+    outline: 0;
+    background-color: aquamarine;
+    color: aqua;
+}
+
+#mainDiv {
+    margin-left: 25%;
+    margin-right: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#gridContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) 2fr 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    gap: 10px 10px;
+}
+
+#questionDisplay {
+    text-align: center;
+    align-self: baseline;
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 5;
+    place-self: center;
+    font-size: 30px;
+}
+
+#finalScoreDisplay {
+    grid-column: 1 / span 2;
+    grid-row: 6 / span 1;
+    font-size: 15px;
+}
+
+#enterInitials {
+    grid-column: 1 / span 1;
+    grid-row: 7 / span 1;
+    font-size: 15px;
+}
+
+#enterInitialsTextArea {
+    grid-column: 2 / span 1;
+    grid-row: 7 / span 1;
+    font-size: 15px;
+    resize: none;
+}
+
