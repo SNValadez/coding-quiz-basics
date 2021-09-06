@@ -12,18 +12,19 @@ body {
 
 header {
     
-    font-family:'Courier New', Courier, monospace;
+    
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
     color: hotpink;
     height: 60px;
     font-size: 2vw;
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    list-style: none;
-
+    font-family:'Courier New', Courier, monospace; font-size: 22px;
+    
 }
 
 .btnHeader {
@@ -33,7 +34,7 @@ header {
     border: 0;
     outline: 0;
     color: hotpink;
-    font-family:'Courier New', Courier, monospace;
+    font-family:'Courier New', Courier, monospace; font-size: 20px;
 }
 
 .btnHeader:hover {
@@ -44,9 +45,9 @@ header {
     border-radius: 12px;
     border: 0;
     outline: 0;
-    background-color: blue;
-    color: aqua;
-    font-family: 'Courier New', Courier, monospace;
+    background-color: purple;
+    color: hotpink;
+    font-family: 'Courier New', Courier, monospace; font-size: 10px;
 }
 
 #mainDiv {
@@ -57,7 +58,7 @@ header {
     flex-direction: column;
     justify-content: center;
     margin-top: 50px;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier, monospace; font-size: 22px;
 }
 
 #gridContainer {
@@ -65,7 +66,7 @@ header {
     grid-template-columns: repeat(2, 1fr) 2fr 1fr;
     grid-template-rows: repeat(10, 1fr);
     gap: 10px 10px;
-    font-family:'Courier New', Courier, monospace
+    font-family:'Courier New', Courier, monospace; font-size: 22px;
 }
 
 #questionDisplay {
@@ -103,10 +104,9 @@ header {
     border-radius: 10%;
     border: 0;
     outline: 0;
-    background-color: aqua;
+    background-color:purple;
     color: hotpink;
-    font-family: 'Courier New', Courier, monospace; 
-    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace; font-size: 15px;
 }
 
 #start-quiz {
@@ -116,10 +116,11 @@ header {
     border-radius: 10%;
     border: 0;
     outline: 0;
-    background-color: aqua;
-    color: hotpink;
+    background-color:purple;
     place-self: center;
-    font-family: 'Courier New', Courier, monospace;
+    color: hotpink;
+    
+    font-family: 'Courier New', Courier, monospace; font-size: 15px;
 }
 
 #answer1 {
@@ -129,7 +130,7 @@ header {
     border-radius: 10%;
     border: 0;
     outline: 0;
-    background-color: aqua;
+    background-color: purple;
     color: hotpink;
     margin-left: 25px;
     font-family:'Courier New', Courier, monospace;
@@ -143,7 +144,7 @@ header {
     border-radius: 10%;
     border: 0;
     outline: 0;
-    background-color: aqua;
+    background-color:purple;
     color: hotpink;
     margin-left: 25px;
     font-family:'Courier New', Courier, monospace;
@@ -157,7 +158,7 @@ header {
     border-radius: 10%;
     border: 0;
     outline: 0;
-    background-color: aqua;
+    background-color: purple;
     color: hotpink;
     margin-left: 25px;
     font-family:'Courier New', Courier, monospace;
@@ -171,7 +172,7 @@ header {
     border-radius: 10%;
     border: 0;
     outline: 0;
-    background-color: aqua;
+    background-color: purple;
     color: hotpink;
     margin-left: 25px;
     font-family:'Courier New', Courier, monospace;
@@ -254,6 +255,40 @@ header {
 
     #answer4 {
         grid-column: 2 / span 2;
+    }
+
+}
+
+@media screen and (max-width: 575px) {
+
+    #answer1:hover {
+        background-color: purple;
+    }
+
+    #answer2:hover {
+        background-color: purple;
+    }
+
+    #answer3:hover {
+        background-color: purple;
+    }
+
+    #answer4:hover {
+        background-color: purple;
+    }
+
+    #submitScore:hover {
+        background-color: purple;
+    }
+
+    #mainDiv {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #questionDisplay {
+        grid-column: 2 / span 2;
+        font-size: 15px;
     }
 
 }
