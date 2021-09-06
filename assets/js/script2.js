@@ -9,7 +9,7 @@ var quizStatus = true;
 var questionNumber = 0;
 var answerNumber = 0;
 var score = 0;
-var highScore = 60;
+var highScore = 50;
 var finalAnswerCheck = 0;
 var checkTimes = 1;
 var viewHighScoresBtnEl = document.getElementById("view-high-scores");
@@ -165,10 +165,10 @@ submitScoreEl.addEventListener("click", function() {
     }
 
 
-    if (quizUserDetails == checkUserValue [0] && highScore == checkUserValue[1]) {
+    if (quizUserDetails == checkUserValue[0] && highScore == checkUserValue[1]) {
 
       localStorage.setItem(quizUserDetails, value);
-      window.alert(highScore + " " + "is the latest entry for user " + enterInitialsTextArea.value + ". Entry will not be added.")
+      window.alert(highScore + " " + "is the latest entry for user initial" + enterInitialsTextArea.value + ". Entry will not be added.")
       break;
     } else if (enterInitialsTextArea.value == "") {
       window.alert("Please enter an initial");
@@ -181,7 +181,7 @@ submitScoreEl.addEventListener("click", function() {
     } else if (quizUserDetails == checkUserValue[0] && highScore < checkUserValue[1]) {
 
       localStorage.setItem(quizUserDetails, value);
-      window.alert("Your previous score of " + checkUserValue[1] + " was higher. Entry will not be added.")
+      window.alert("Your previous score of " + checkUserValue[1] + " was higher. Entry will not be added.");
       break;
     } else {
       localStorage.setItem(quizUserDetails, value);
@@ -195,8 +195,7 @@ submitScoreEl.addEventListener("click", function() {
     }
     
     
-  }
-);
+  });
 
 answer1BtnEl.addEventListener("mouseover", function() {
 
@@ -227,7 +226,7 @@ startQuizBtnEl.addEventListener("click", function() {
   startQuizBtnEl.style.display = "none";
   questionDisplayEl.style.display = "none";
   finalScoreDisplayEl.style.display = "none";
-  enterIntitials.style.display = "none";
+  enterInitialsEl.style.display = "none";
   score = 0;
   timeLeft = 60;
   htmlTimeLeft.textContent = timeLeft;
@@ -243,6 +242,8 @@ startQuizBtnEl.addEventListener("click", function() {
 
     if(timeLeft >=1 && finalAnswerCheck !==1) {
 
+      questionDisplayEl.textContent = questionsObject.correct[questionNumber];
+      
       questionDisplayEl.style.display = "";
       answer1BtnEl.style.display = "";
       answer2BtnEl.style.display = "";
@@ -251,9 +252,9 @@ startQuizBtnEl.addEventListener("click", function() {
 
 
       answer1BtnEl.textContent = answersObject.answers[answerNumber][0];
-      answer1BtnEl.textContent = answersObject.answers[answerNumber][1];
-      answer1BtnEl.textContent = answersObject.answers[answerNumber][2];
-      answer1BtnEl.textContent = answersObject.answers[answerNumber][3];
+      answer2BtnEl.textContent = answersObject.answers[answerNumber][1];
+      answer3BtnEl.textContent = answersObject.answers[answerNumber][2];
+      answer4BtnEl.textContent = answersObject.answers[answerNumber][3];
 
       gridContainer.appendChild(questionDisplayEl);
       gridContainer.appendChild(answer1BtnEl);
@@ -307,7 +308,7 @@ startQuizBtnEl.addEventListener("click", function() {
                 answerNumber = 3;
                 break;
               case "Commas":
-
+              console.log("Correct");
               answerCorrectWrong.style.display = "";
               answerCorrectWrong.textContent = "Correct!";
               answerCorrectWrong.style.borderTop ="solid #800080";
@@ -325,13 +326,16 @@ startQuizBtnEl.addEventListener("click", function() {
 
               questionDisplayEl.textContent = "You have finished!";
               finalScoreDisplayEl.style.display = "";
-              enterIntitials.style.display = "";
+              enterInitialsEl.style.display = "";
               enterInitialsTextArea.style.display = "";
               finalAnswerCheck = 1;
-
-              
-
-
+            lastQuestionWrong();
+            finalScoreDisplayEl.textContent = "Your final score is: " + highScore;
+            enterInitialsEl.textContent = "Enter initials: "
+            submitScoreEl.style.display = "";
+            submitScoreEl.textContent = "Submit";
+            clearInterval(timeInterval);
+            break;
 
           }
         }
@@ -361,10 +365,10 @@ startQuizBtnEl.addEventListener("click", function() {
 
           questionDisplayEl.textContent = "You have finished!";
               finalScoreDisplayEl.style.display = "";
-              enterIntitials.style.display = "";
+              enterInitialsEl.style.display = "";
               enterInitialsTextArea.style.display = "";
               finalScoreDisplayEl.textContent = "Your final score is: " + highScore;
-              enterInitials.textContent = "Enter initials: "
+              enterInitialsEl.textContent = "Enter initials: "
 
               submitScoreEl.style.display = "";
               submitScoreEl.textContent = "Submit"
@@ -405,7 +409,7 @@ startQuizBtnEl.addEventListener("click", function() {
                 answerNumber = 2;
                 break;
               case "Terminal/Bash":
-
+              console.log("Inside the case now");
 
               answerCorrectWrong.style.display = "";
               answerCorrectWrong.textContent = "Wrong!";
@@ -438,7 +442,7 @@ startQuizBtnEl.addEventListener("click", function() {
           answerCorrectWrong.style.borderTop = "solid #800080";
           answerCorrectWrongGrid.appendChild(answerCorrectWrong);
         } else if (questionDisplayEl.textContent === "A very useful tool to debug arrays is:" && answer3BtnEl.textContent === "For loops") {
-
+          console.log("Correct");
           questionNumber = 4;
           answerNumber = 3;
           answerCorrectWrong.style.display = "";
@@ -486,9 +490,9 @@ startQuizBtnEl.addEventListener("click", function() {
 
               lastQuestionWrong();
               finalScoreDisplayEl.textContent = "Your final score is: " + highScore;
-              enterInitialsTextArea.textContent = "Enter initials: ";
+              enterInitials.textContent = "Enter initials: ";
               submitScoreEl.style.display = "";
-              submitScoreEl.textContent = "Submit"
+              submitScoreEl.textContent = "Submit";
               clearInterval(timeInterval);
               break;
           }

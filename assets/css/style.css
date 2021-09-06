@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace; font-size: 20px;
+    font-family: 'Courier New', Courier, monospace; font-size: 22px;
     background-color: aqua;
 }
 
@@ -18,7 +18,7 @@ header {
     font-size: 2vw;
     padding-top: 10px;
     padding-left: 10px;
-    padding-left: 10px;
+    padding-right: 10px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -28,11 +28,12 @@ header {
 
 .btnHeader {
     border-radius: 10px;
-    background-color: aqua;
+    background-color: purple;
     text-decoration: none;
     border: 0;
     outline: 0;
     color: hotpink;
+    font-family:'Courier New', Courier, monospace;
 }
 
 .btnHeader:hover {
@@ -43,8 +44,9 @@ header {
     border-radius: 12px;
     border: 0;
     outline: 0;
-    background-color: aquamarine;
+    background-color: blue;
     color: aqua;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #mainDiv {
@@ -55,6 +57,7 @@ header {
     flex-direction: column;
     justify-content: center;
     margin-top: 50px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #gridContainer {
@@ -62,6 +65,7 @@ header {
     grid-template-columns: repeat(2, 1fr) 2fr 1fr;
     grid-template-rows: repeat(10, 1fr);
     gap: 10px 10px;
+    font-family:'Courier New', Courier, monospace
 }
 
 #questionDisplay {
@@ -92,3 +96,164 @@ header {
     resize: none;
 }
 
+#submitScore {
+    grid-column: 3 / span 1;
+    grid-row: 7 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0;
+    background-color: aqua;
+    color: hotpink;
+    font-family: 'Courier New', Courier, monospace; 
+    font-size: 15px;
+}
+
+#start-quiz {
+    grid-column: 2 / span 2;
+    grid-row: 5 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0;
+    background-color: aqua;
+    color: hotpink;
+    place-self: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#answer1 {
+    grid-column: 1 / span 2;
+    grid-row: 6 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0;
+    background-color: aqua;
+    color: hotpink;
+    margin-left: 25px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+#answer2 {
+    grid-column: 1 / span 2;
+    grid-row: 7 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0;
+    background-color: aqua;
+    color: hotpink;
+    margin-left: 25px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+#answer3 {
+    grid-column: 1 / span 2;
+    grid-row: 8 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0;
+    background-color: aqua;
+    color: hotpink;
+    margin-left: 25px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+#answer4 {
+    grid-column: 1 / span 2;
+    grid-row: 9 / span 1;
+    padding: 10px 10px 10px 10px;
+    border-radius: 10%;
+    border: 0;
+    outline: 0;
+    background-color: aqua;
+    color: hotpink;
+    margin-left: 25px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 15px;
+}
+
+#answer1:hover {
+    background-color: orange;
+}
+
+#answer2:hover {
+    background-color: orange;
+}
+
+#answer3:hover {
+    background-color: orange;
+}
+
+#answer4:hover {
+    background-color: orange;
+}
+
+#submitScore:hover {
+    background-color: orange;
+}
+
+#answerCorrectWrongGrid {
+    display: grid;
+    grid-template-columns: 4fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 10px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 22px;
+}
+
+#answerCorrectWrong {
+    text-align: left;
+    grid-column: 1 / span 4;
+    grid-row: 1 / span 2;
+
+}
+
+@media screen and (max-width: 768px) {
+
+    #answer1:hover{
+        background-color: orange;
+    }
+    
+    #answer2:hover {
+    background-color: orange;
+    }
+
+    #answer3:hover {
+        background-color: orange;
+    }
+
+    #answer4:hover {
+        background-color: orange;
+    }
+
+    #submitScore:hover {
+        background-color: orange;
+    }
+
+    #questionDisplay {
+        font-size: 25px;
+    }
+
+    #answer1 {
+        grid-column: 2 / span 2;
+    }
+
+    #answer2 {
+        grid-column: 2 / span 2;
+    }
+
+    #answer3 {
+        grid-column: 2 / span 2;
+    }
+
+    #answer4 {
+        grid-column: 2 / span 2;
+    }
+
+}
